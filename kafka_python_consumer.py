@@ -31,8 +31,8 @@ def mul_thread():
     data = []
     with ProcessPoolExecutor(max_workers=2)as t_p:
         start = time.time()
-        data.append(t_p.submit(get_consume, table='hh4', i_d='sui_b', ser_ver=server, early='earliest'))
-        data.append(t_p.submit(get_consume, table='hh4', i_d='sui_b', ser_ver=server, early='earliest'))
+        data.append(t_p.submit(get_consume, table='hh5', i_d='sui_b7', ser_ver=server, early='earliest'))
+        data.append(t_p.submit(get_consume, table='hh5', i_d='sui_b7', ser_ver=server, early='earliest'))
     t_p.shutdown(wait=True)
     with open('/tmp/tmp/pycharm_project_4/814new/enhance/save/save1.csv', 'a')as f:
         for d in data:

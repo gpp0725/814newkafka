@@ -7,7 +7,7 @@ from confluent_kafka import Consumer, KafkaError
 import time
 
 
-def conf_csm(ser_ver, i_d, early, table):
+def conf_csm(ser_ver, i_d, early):
     c = Consumer({
         'bootstrap.servers': ser_ver,
         'group.id': i_d,
@@ -17,20 +17,16 @@ def conf_csm(ser_ver, i_d, early, table):
             # 'session.timeout.ms': 3000
         }
     })
-    c.subscribe([table])
+    c.subscribe(['hh5'])
     co_unt = 0
-    tout = 0
     with open('confluent_kafkamore.csv', 'a')as f_v:
         while True:
             msg = c.poll(1.0)
             if msg is None:
-                tout += 1
-                if tout > 10:
-                    break
                 continue
             co_unt += 1
-            # if count >= 14069:
-            #     break
+            if co_unt >= 120000:
+                break
             if msg.error():
                 if msg.error().code() == KafkaError._PARTITION_EOF:
                     continue
@@ -50,8 +46,8 @@ if __name__ == '__main__':
     data = []
     with ProcessPoolExecutor(max_workers=2)as t_p:
         start = time.time()
-        data.append(t_p.submit(conf_csm, ser_ver=my_broker, i_d='sui_b', early='earliest', table='hh1', ))
-        data.append(t_p.submit(conf_csm, ser_ver=my_broker, i_d='sui_b', early='earliest', table='hh1', ))
+        data.append(t_p.submit(conf_csm, ser_ver=my_broker, i_d='sui_6', early='earliest', ))
+        data.append(t_p.submit(conf_csm, ser_ver=my_broker, i_d='sui_6', early='earliest', ))
     t_p.shutdown(wait=True)
     with open('/tmp/tmp/pycharm_project_4/814new/enhance/save/save1.csv', 'a')as f:
         for d in data:

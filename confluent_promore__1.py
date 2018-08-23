@@ -25,8 +25,8 @@ def pro_duc():
         # line_data = line_data.replace('\n', '').replace('\t', '').replace('\r', '').strip()
         if line_data:
             count += 1
-            # print(line_data.decode())
-            c.produce('hh1', line_data)
+            # print(line_data)
+            c.produce('hh5', line_data)
     c.flush()
 
     return os.getpid(), count

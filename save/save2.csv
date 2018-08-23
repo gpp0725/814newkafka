@@ -8,3 +8,9 @@ kafka,multi process single thread,7.414191246,9.13E-05,,,,
 confluent_kafka,multi process single thread,2.521784306,3.10E-05,,,,
 confluent_kafka,multi process single thread,2.522039175,3.10E-05,,,,
 confluent_kafka,multi process single thread,2.522096157,3.10E-05,,,,
+confluent_kafka,multi process single thread,1.899406909942627,2.3383935267123333e-05
+confluent_kafka,multi process single thread,1.8996953964233398,2.3387486875341203e-05
+confluent_kafka,multi process single thread,1.8997955322265625,2.3388719664970544e-05
+confluent_kafka,multi process single thread,2.497687339782715,3.074947172470625e-05
+confluent_kafka,multi process single thread,2.4979825019836426,3.075310551889941e-05
+confluent_kafka,multi process single thread,2.4980576038360596,3.075403011112142e-05

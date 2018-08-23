@@ -8,13 +8,13 @@ import time
 
 def consume(my_broke):
     client = KafkaClient(hosts=my_broke)
-    topic = client.topics[b'hh1']  # b'topic'
+    topic = client.topics[b'hh5']  # b'topic'
     consumer = topic.get_simple_consumer()
     count = 0
     with open('py_kafkamore.csv', 'a')as f:
         for message in consumer:
             count += 1
-            if count >= 81227:
+            if count >= 121000:
                 break
             row = [message.partition, message.offset, message.value]
             f_cv = csv.writer(f)
