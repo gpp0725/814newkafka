@@ -1,0 +1,10 @@
+tools,With,total_produce_time(s),avg_produce_time(s),,,,
+pykafka,multi process single thread,1.242151737,1.53E-05,7.413887978,9.13E-05,2.521784306,3.10E-05
+pykafka,multi process single thread,1.242521048,1.53E-05,7.41414094,9.13E-05,2.522039175,3.10E-05
+pykafka,multi process single thread,1.242578745,1.53E-05,7.414191246,9.13E-05,2.522096157,3.10E-05
+kafka,multi process single thread,7.413887978,9.13E-05,,,,
+kafka,multi process single thread,7.41414094,9.13E-05,,,,
+kafka,multi process single thread,7.414191246,9.13E-05,,,,
+confluent_kafka,multi process single thread,2.521784306,3.10E-05,,,,
+confluent_kafka,multi process single thread,2.522039175,3.10E-05,,,,
+confluent_kafka,multi process single thread,2.522096157,3.10E-05,,,,

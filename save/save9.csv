@@ -1,0 +1,4 @@
+tools,With,total_produce_time(s),avg_produce_time(s)
+pykafka,Single process single thread,0.727170467376709,8.952324564205363e-06
+kafka,Single process single thread,5.880947589874268,7.240138857614178e-05
+confluent_kafka ,Single process single thread,2.34411883354187,2.8858862613932193e-05

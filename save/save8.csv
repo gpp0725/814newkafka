@@ -1,0 +1,4 @@
+tools,With,total_consume_time(s),avg_consume_time(s)
+pykafka,Single consumer single thread,3.335872173,4.11E-05
+kafka,Single consumer single thread,2.756283522,0.000214014
+confluent-kafka,Single consumer single thread,1.364241123,1.68E-05

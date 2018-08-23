@@ -1,0 +1,11 @@
+tools,With,total_produce_time(s),avg_produce_time(s)
+pykafka,multi process single thread,4.437444686889648,5.463016837861362e-05
+pykafka,multi process single thread,4.437425851821899,5.4629936496754766e-05
+kafka,multi process single thread,6.539444446563721,5.3835437648193566e-05
+kafka,multi process single thread,6.573832273483276,5.379127954736336e-05
+kafka,multi process single thread,6.6982362270355225,5.5145855784722405e-05
+kafka,multi process single thread,6.72315239906311,5.500996096339388e-05
+confluent_kafka,multi process single thread,12.886152505874634,0.00010543579919385551
+confluent_kafka,multi process single thread,12.886344194412231,0.00010609100724004637
+confluent_kafka,multi process single thread,13.062038660049438,0.00010687491744300707
+confluent_kafka,multi process single thread,13.05537724494934,0.00010748262664100227
