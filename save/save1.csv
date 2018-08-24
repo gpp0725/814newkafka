@@ -1,7 +1,20 @@
 tools,With,total_produce_time(s),avg_produce_time(s)
-confluent_kafka,multi process single thread,2.018606185913086,1.6821718215942384e-05
-confluent_kafka,multi process single thread,2.1224684715270996,1.768723726272583e-05
-kafka,multi process single thread,6.867180824279785,5.6167744878047026e-05
-kafka,multi process single thread,6.845581769943237,5.637982333854864e-05
-pykafka,multi process single thread,6.237857103347778,5.1552538044196514e-05
-pykafka,multi process single thread,6.246153354644775,5.1621102104502275e-05
+confluent_kafka,multi process single thread,2.018606186,1.68E-05
+confluent_kafka,multi process single thread,2.122468472,1.77E-05
+kafka,multi process single thread,6.867180824,5.62E-05
+kafka,multi process single thread,6.84558177,5.64E-05
+pykafka,multi process single thread,6.237857103,5.16E-05
+pykafka,multi process single thread,6.246153355,5.16E-05
+pykafka,multi process single thread,4.045676946640015,4.9807046260972516e-05
+tools,With,total_produce_time(s),avg_produce_time(s)
+pykafka,multi process single thread,4.045481443405151,4.98046393859819e-05
+confluent_kafka,multi process single thread,2.2137184143066406,1.823491280318485e-05
+confluent_kafka,multi process single thread,2.1038191318511963,1.7329646885100465e-05
+kafka,multi process single thread,2.3085594177246094,0.030375781812165912
+kafka,multi process single thread,2.308300018310547,0.0028674534388950894
+kafka,multi process single thread,6.222200155258179,5.122164176675375e-05
+kafka,multi process single thread,6.317805528640747,5.1698420920917694e-05
+confluent_kafka,multi process single thread,3.6405739784240723,2.9988253529028603e-05
+confluent_kafka,multi process single thread,3.60553240776062,2.969960797166903e-05
+confluent_kafka,multi process single thread,3.7394907474517822,3.0803053932881235e-05
+confluent_kafka,multi process single thread,3.6986727714538574,3.0466826782980704e-05
