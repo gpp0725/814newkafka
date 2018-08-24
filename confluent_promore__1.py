@@ -22,24 +22,23 @@ def pro_duc():
     })
     count = 0
     for line_data in get_txt():
-        # line_data = line_data.replace('\n', '').replace('\t', '').replace('\r', '').strip()
         if line_data:
             count += 1
             # print(line_data.decode())
-            c.produce('hh1', line_data)
+            c.produce(table, line_data)
     c.flush()
 
     return os.getpid(), count
 
 
 def process_thread():
-    with ProcessPoolExecutor(max_workers=3)as t_p:
+    with ProcessPoolExecutor(max_workers=3)as t_p:  # multi_processes
         ob_js = []
         start = time.time()
         for i in range(3):
             data = t_p.submit(pro_duc)
             ob_js.append(data)
-    with open('/tmp/tmp/pycharm_project_4/814new/enhance/save/save2.csv', 'a')as f:
+    with open(save_time_data, 'a')as f:
         for re in ob_js:
             t_p.shutdown(wait=True)
             if re.done():
@@ -61,5 +60,6 @@ def process_thread():
 if __name__ == '__main__':
     my_broker = "127.0.0.1:9092"
     my_group = 'my_group'
-    # pro_duc()
+    table = 'hh1'
+    save_time_data = '/tmp/tmp/pycharm_project_4/814new/enhance/save/save2.csv'
     process_thread()

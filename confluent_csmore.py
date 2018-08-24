@@ -45,8 +45,8 @@ def conf_csm():
 
 if __name__ == '__main__':
     my_broker = "127.0.0.1:9092"
-    ci_d = 'my_o'
-    table = 'mgj2'
+    ci_d = 'my_group'
+    table = 'my_test'
     path = 'confluent_kafka.csv'
     save_path = '/tmp/tmp/pycharm_project_4/814new/enhance/save/save1.csv'
     data = []

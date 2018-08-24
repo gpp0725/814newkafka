@@ -1,34 +1,33 @@
-import csv
 import time
 
 from confluent_kafka import Producer
+from .save.save import save_data
 
-my_broker = "127.0.0.1:9092"
-
-c = Producer({
-    'bootstrap.servers': my_broker,
-    'group.id': 'my_group1',
-    # 'client.id': 'lanyang',
-    'default.topic.config': {
-        'auto.offset.reset': 'smallest'
-    }
-})
+def obtain_server():
+    c = Producer({
+        'bootstrap.servers': my_broker,
+        'group.id': my_group,
+        'default.topic.config': {
+            'auto.offset.reset': 'smallest'
+        }
+    })
+    return c
 
 
 def get_txt():
-    with open(r'/tmp/tmp/pycharm_project_4/814new/enhance/Harry Potter.txt', 'rb')as f:
-        yield from f.readlines()
+    with open(file_path, 'rb')as f_:
+        yield from f_.readlines()
 
 
 def con_pro2():
     count = 0
     star_tm = time.time()
+    c = obtain_server()
     for index, line in enumerate(get_txt()):
-        # line = line.replace('\n', '').replace('\t', '').replace('\r', '').strip()
-        if len(line) != 0:
+        if line:
             count += 1
             # print(index, line, count)
-            c.produce('hh2', line)
+            c.produce(table, line)
     c.flush()
     end_tm = time.time()
     total_tm = end_tm - star_tm
@@ -36,16 +35,17 @@ def con_pro2():
 
 
 if __name__ == '__main__':
-    co_unt,to_tal,avg_tm = con_pro2()
+    my_broker = "127.0.0.1:9092"
+    my_group = 'my_group'
+    table = 'mgj1'
+    file_path = r'/tmp/tmp/pycharm_project_4/814new/enhance/Harry Potter.txt'
+    save_data_path = '/tmp/tmp/pycharm_project_4/814new/enhance/save/save9.csv'
+    co_unt, to_tal, avg_tm = con_pro2()  # obtain produce data,time
+
     list1 = ['confluent_kafka ', 'Single process single thread', to_tal, avg_tm]
     row = list1
-    with open('/tmp/tmp/pycharm_project_4/814new/enhance/save/save9.csv', 'a')as f:
-        f_csv = csv.writer(f)
-        f_csv.writerow(row)
+    save_data(save_data_path, row)
     print('A total of {} messages were produced in {} seconds,'
           ' with an average of {} second per message.'.format(co_unt,
                                                               to_tal,
                                                               avg_tm))
-
-
-# zhengchang
